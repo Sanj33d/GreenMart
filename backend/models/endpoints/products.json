@@ -1,0 +1,1315 @@
+[{
+  "_id": {
+    "$oid": "69429b43f3edac3695fd464a"
+  },
+  "name": "Wireless Mouse",
+  "description": "Ergonomic 2.4GHz wireless mouse",
+  "price": 19.99,
+  "category": "Electronics",
+  "brand": "LogiTech",
+  "tags": [
+    "mouse",
+    "wireless",
+    "peripherals"
+  ],
+  "stock": 150,
+  "rating": 3.8,
+  "reviewsCount": 5,
+  "isActive": true,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-12-17T12:00:03.472Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-18T09:01:33.853Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69429b43f3edac3695fd464b"
+  },
+  "name": "Gaming Laptop",
+  "description": "RTX 4060, 16GB RAM, 512GB SSD",
+  "price": 1299.99,
+  "category": "Electronics",
+  "brand": "Acer",
+  "tags": [
+    "laptop",
+    "gaming",
+    "computer"
+  ],
+  "stock": 25,
+  "rating": 3.2,
+  "reviewsCount": 5,
+  "isActive": true,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-12-17T12:00:03.474Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-17T12:32:07.356Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69429b43f3edac3695fd464c"
+  },
+  "name": "Coffee Mug",
+  "description": "Ceramic mug 350ml",
+  "price": 5.99,
+  "category": "Home",
+  "brand": "Mugify",
+  "tags": [
+    "mug",
+    "kitchen"
+  ],
+  "stock": 300,
+  "rating": 0,
+  "reviewsCount": 0,
+  "isActive": true,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-12-17T12:00:03.474Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-17T12:00:03.474Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69429b43f3edac3695fd464d"
+  },
+  "name": "Noise-Cancelling Headphones",
+  "description": "Over-ear ANC Bluetooth headphones",
+  "price": 249.99,
+  "category": "Electronics",
+  "brand": "SoundMax",
+  "tags": [
+    "headphones",
+    "audio",
+    "wireless"
+  ],
+  "stock": 45,
+  "rating": 0,
+  "reviewsCount": 0,
+  "isActive": true,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-12-17T12:00:03.474Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-17T12:00:03.474Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69429b43f3edac3695fd464e"
+  },
+  "name": "Smartphone Case",
+  "description": "Shockproof case for iPhone 15",
+  "price": 24.99,
+  "category": "Accessories",
+  "brand": "GuardPro",
+  "tags": [
+    "case",
+    "iphone",
+    "accessories"
+  ],
+  "stock": 200,
+  "rating": 3.4,
+  "reviewsCount": 5,
+  "isActive": true,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-12-17T12:00:03.474Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-06T09:59:01.903Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69429b43f3edac3695fd464f"
+  },
+  "name": "Yoga Mat",
+  "description": "Non-slip eco-friendly yoga mat",
+  "price": 39.99,
+  "category": "Fitness",
+  "brand": "FlexFit",
+  "tags": [
+    "yoga",
+    "fitness",
+    "exercise"
+  ],
+  "stock": 80,
+  "rating": 0,
+  "reviewsCount": 0,
+  "isActive": true,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-12-17T12:00:03.474Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-17T12:00:03.474Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69429b43f3edac3695fd4650"
+  },
+  "name": "Running Shoes",
+  "description": "Lightweight breathable running shoes",
+  "price": 89.99,
+  "category": "Footwear",
+  "brand": "Stride",
+  "tags": [
+    "shoes",
+    "running",
+    "sports"
+  ],
+  "stock": 65,
+  "rating": 0,
+  "reviewsCount": 0,
+  "isActive": true,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-12-17T12:00:03.474Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-17T12:00:03.474Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69429b43f3edac3695fd4651"
+  },
+  "name": "Desk Lamp",
+  "description": "LED desk lamp with adjustable brightness",
+  "price": 45,
+  "category": "Home",
+  "brand": "BrightLite",
+  "tags": [
+    "lamp",
+    "lighting",
+    "office"
+  ],
+  "stock": 90,
+  "rating": 0,
+  "reviewsCount": 0,
+  "isActive": true,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-12-17T12:00:03.474Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-17T12:00:03.474Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69429b43f3edac3695fd4652"
+  },
+  "name": "Electric Kettle",
+  "description": "1.7L stainless steel electric kettle",
+  "price": 59.99,
+  "category": "Home Appliances",
+  "brand": "HeatWave",
+  "tags": [
+    "kettle",
+    "kitchen",
+    "appliance"
+  ],
+  "stock": 55,
+  "rating": 0,
+  "reviewsCount": 0,
+  "isActive": true,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-12-17T12:00:03.474Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-17T12:00:03.474Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69429b43f3edac3695fd4653"
+  },
+  "name": "Bluetooth Speaker",
+  "description": "Portable waterproof Bluetooth speaker",
+  "price": 79.99,
+  "category": "Electronics",
+  "brand": "SoundBlast",
+  "tags": [
+    "speaker",
+    "audio",
+    "portable"
+  ],
+  "stock": 70,
+  "rating": 0,
+  "reviewsCount": 0,
+  "isActive": true,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2025-12-17T12:00:03.475Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-17T12:00:03.475Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6959764e1bf18a64519918e5"
+  },
+  "name": "Business Laptop",
+  "description": "Intel i7, 16GB RAM, 512GB SSD, lightweight design",
+  "price": 999.99,
+  "category": "Electronics",
+  "brand": "Dell",
+  "tags": [
+    "laptop",
+    "business",
+    "portable"
+  ],
+  "stock": 27,
+  "rating": 3.7,
+  "reviewsCount": 12,
+  "isActive": true,
+  "image": "",
+  "createdAt": {
+    "$date": "2026-01-03T20:04:30.445Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-03T20:04:30.445Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6959764e1bf18a64519918e8"
+  },
+  "name": "Ultrabook",
+  "description": "Thin and light 13-inch laptop with long battery life",
+  "price": 1199.99,
+  "category": "Electronics",
+  "brand": "HP",
+  "tags": [
+    "laptop",
+    "ultrabook",
+    "portable"
+  ],
+  "stock": 15,
+  "rating": 4.7,
+  "reviewsCount": 19,
+  "isActive": true,
+  "image": "",
+  "createdAt": {
+    "$date": "2026-01-03T20:04:30.568Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-03T20:04:30.568Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6959764e1bf18a64519918eb"
+  },
+  "name": "Budget Laptop",
+  "description": "Entry-level laptop perfect for students and basic tasks",
+  "price": 399.99,
+  "category": "Electronics",
+  "brand": "Lenovo",
+  "tags": [
+    "laptop",
+    "budget",
+    "student"
+  ],
+  "stock": 27,
+  "rating": 5,
+  "reviewsCount": 40,
+  "isActive": true,
+  "image": "",
+  "createdAt": {
+    "$date": "2026-01-03T20:04:30.680Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-03T20:04:30.680Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6959764e1bf18a64519918ef"
+  },
+  "name": "Gaming Headset",
+  "description": "7.1 surround sound gaming headset with RGB lighting",
+  "price": 89.99,
+  "category": "Electronics",
+  "brand": "GameAudio",
+  "tags": [
+    "headphones",
+    "gaming",
+    "audio"
+  ],
+  "stock": 130,
+  "rating": 3.1,
+  "reviewsCount": 54,
+  "isActive": true,
+  "image": "",
+  "createdAt": {
+    "$date": "2026-01-03T20:04:30.870Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-03T20:04:30.870Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6959764e1bf18a64519918f2"
+  },
+  "name": "Wireless Earbuds",
+  "description": "True wireless earbuds with noise cancellation",
+  "price": 129.99,
+  "category": "Electronics",
+  "brand": "SoundMax",
+  "tags": [
+    "earbuds",
+    "wireless",
+    "audio"
+  ],
+  "stock": 125,
+  "rating": 4.4,
+  "reviewsCount": 29,
+  "isActive": true,
+  "image": "",
+  "createdAt": {
+    "$date": "2026-01-03T20:04:30.987Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-03T20:04:30.987Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6959764f1bf18a64519918f5"
+  },
+  "name": "Studio Headphones",
+  "description": "Professional studio monitoring headphones",
+  "price": 199.99,
+  "category": "Electronics",
+  "brand": "AudioPro",
+  "tags": [
+    "headphones",
+    "studio",
+    "professional"
+  ],
+  "stock": 95,
+  "rating": 4.6,
+  "reviewsCount": 51,
+  "isActive": true,
+  "image": "",
+  "createdAt": {
+    "$date": "2026-01-03T20:04:31.109Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-03T20:04:31.109Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6959764f1bf18a64519918f9"
+  },
+  "name": "Smart Speaker",
+  "description": "Voice-controlled smart speaker with Alexa",
+  "price": 99.99,
+  "category": "Electronics",
+  "brand": "TechHome",
+  "tags": [
+    "speaker",
+    "smart",
+    "alexa",
+    "voice"
+  ],
+  "stock": 80,
+  "rating": 4.8,
+  "reviewsCount": 28,
+  "isActive": true,
+  "image": "",
+  "createdAt": {
+    "$date": "2026-01-03T20:04:31.306Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-03T20:04:31.306Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6959764f1bf18a64519918fc"
+  },
+  "name": "Soundbar",
+  "description": "5.1 channel soundbar for TV with subwoofer",
+  "price": 299.99,
+  "category": "Electronics",
+  "brand": "AudioPro",
+  "tags": [
+    "speaker",
+    "soundbar",
+    "tv",
+    "audio"
+  ],
+  "stock": 92,
+  "rating": 4.4,
+  "reviewsCount": 50,
+  "isActive": true,
+  "image": "",
+  "createdAt": {
+    "$date": "2026-01-03T20:04:31.440Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-03T20:04:31.440Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6959764f1bf18a6451991900"
+  },
+  "name": "Gaming Mouse",
+  "description": "RGB gaming mouse with 16000 DPI sensor",
+  "price": 59.99,
+  "category": "Electronics",
+  "brand": "GameTech",
+  "tags": [
+    "mouse",
+    "gaming",
+    "rgb"
+  ],
+  "stock": 182,
+  "rating": 4.2,
+  "reviewsCount": 40,
+  "isActive": true,
+  "image": "",
+  "createdAt": {
+    "$date": "2026-01-03T20:04:31.620Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-03T20:04:31.620Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6959764f1bf18a6451991903"
+  },
+  "name": "Mechanical Keyboard",
+  "description": "RGB mechanical keyboard with Cherry MX switches",
+  "price": 129.99,
+  "category": "Electronics",
+  "brand": "KeyMaster",
+  "tags": [
+    "keyboard",
+    "mechanical",
+    "rgb",
+    "gaming"
+  ],
+  "stock": 177,
+  "rating": 4.3,
+  "reviewsCount": 15,
+  "isActive": true,
+  "image": "",
+  "createdAt": {
+    "$date": "2026-01-03T20:04:31.753Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-03T20:04:31.753Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6959764f1bf18a6451991906"
+  },
+  "name": "Wireless Keyboard",
+  "description": "Slim wireless keyboard for office and home",
+  "price": 49.99,
+  "category": "Electronics",
+  "brand": "LogiTech",
+  "tags": [
+    "keyboard",
+    "wireless",
+    "office"
+  ],
+  "stock": 109,
+  "rating": 3.6,
+  "reviewsCount": 49,
+  "isActive": true,
+  "image": "",
+  "createdAt": {
+    "$date": "2026-01-03T20:04:31.864Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-03T20:04:31.864Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6959764f1bf18a6451991909"
+  },
+  "name": "Webcam",
+  "description": "1080p HD webcam with auto-focus and microphone",
+  "price": 69.99,
+  "category": "Electronics",
+  "brand": "CamTech",
+  "tags": [
+    "webcam",
+    "video",
+    "conference"
+  ],
+  "stock": 188,
+  "rating": 4,
+  "reviewsCount": 18,
+  "isActive": true,
+  "image": "",
+  "createdAt": {
+    "$date": "2026-01-03T20:04:31.977Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-03T20:04:31.977Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "695976501bf18a645199190d"
+  },
+  "name": "Phone Stand",
+  "description": "Adjustable phone stand for desk and car",
+  "price": 12.99,
+  "category": "Accessories",
+  "brand": "StandPro",
+  "tags": [
+    "stand",
+    "phone",
+    "accessories"
+  ],
+  "stock": 179,
+  "rating": 4.1,
+  "reviewsCount": 38,
+  "isActive": true,
+  "image": "",
+  "createdAt": {
+    "$date": "2026-01-03T20:04:32.183Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-03T20:04:32.183Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "695976501bf18a6451991910"
+  },
+  "name": "Wireless Charger",
+  "description": "Fast wireless charging pad for smartphones",
+  "price": 29.99,
+  "category": "Accessories",
+  "brand": "ChargeTech",
+  "tags": [
+    "charger",
+    "wireless",
+    "charging"
+  ],
+  "stock": 178,
+  "rating": 4.2,
+  "reviewsCount": 18,
+  "isActive": true,
+  "image": "",
+  "createdAt": {
+    "$date": "2026-01-03T20:04:32.294Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-03T20:04:32.294Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "695976501bf18a6451991913"
+  },
+  "name": "Power Bank",
+  "description": "20000mAh portable power bank with fast charging",
+  "price": 39.99,
+  "category": "Accessories",
+  "brand": "PowerMax",
+  "tags": [
+    "powerbank",
+    "charging",
+    "portable"
+  ],
+  "stock": 65,
+  "rating": 4.5,
+  "reviewsCount": 40,
+  "isActive": true,
+  "image": "",
+  "createdAt": {
+    "$date": "2026-01-03T20:04:32.407Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-03T20:04:32.407Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "695976501bf18a6451991918"
+  },
+  "name": "Coffee Maker",
+  "description": "12-cup programmable coffee maker with timer",
+  "price": 89.99,
+  "category": "Home Appliances",
+  "brand": "BrewMaster",
+  "tags": [
+    "coffee",
+    "maker",
+    "appliance"
+  ],
+  "stock": 66,
+  "rating": 4.2,
+  "reviewsCount": 32,
+  "isActive": true,
+  "image": "",
+  "createdAt": {
+    "$date": "2026-01-03T20:04:32.622Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-03T20:04:32.622Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "695976501bf18a645199191c"
+  },
+  "name": "Table Lamp",
+  "description": "Modern table lamp with touch dimmer",
+  "price": 35.99,
+  "category": "Home",
+  "brand": "BrightLite",
+  "tags": [
+    "lamp",
+    "lighting",
+    "home"
+  ],
+  "stock": 28,
+  "rating": 3,
+  "reviewsCount": 16,
+  "isActive": true,
+  "image": "",
+  "createdAt": {
+    "$date": "2026-01-03T20:04:32.784Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-03T20:04:32.784Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "695976501bf18a645199191f"
+  },
+  "name": "Throw Pillow",
+  "description": "Decorative throw pillow with soft cover",
+  "price": 19.99,
+  "category": "Home",
+  "brand": "ComfortHome",
+  "tags": [
+    "pillow",
+    "decor",
+    "home"
+  ],
+  "stock": 203,
+  "rating": 4,
+  "reviewsCount": 20,
+  "isActive": true,
+  "image": "",
+  "createdAt": {
+    "$date": "2026-01-03T20:04:32.891Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-03T20:04:32.891Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "695976511bf18a6451991922"
+  },
+  "name": "Wall Clock",
+  "description": "Silent wall clock with modern design",
+  "price": 24.99,
+  "category": "Home",
+  "brand": "TimeStyle",
+  "tags": [
+    "clock",
+    "wall",
+    "decor"
+  ],
+  "stock": 113,
+  "rating": 5,
+  "reviewsCount": 49,
+  "isActive": true,
+  "image": "",
+  "createdAt": {
+    "$date": "2026-01-03T20:04:33.003Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-03T20:04:33.003Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "695976511bf18a6451991927"
+  },
+  "name": "Gym Bag",
+  "description": "Large gym bag with multiple compartments and shoe pocket",
+  "price": 49.99,
+  "category": "Fitness",
+  "brand": "FitGear",
+  "tags": [
+    "bag",
+    "gym",
+    "fitness"
+  ],
+  "stock": 206,
+  "rating": 4.8,
+  "reviewsCount": 41,
+  "isActive": true,
+  "image": "",
+  "createdAt": {
+    "$date": "2026-01-03T20:04:33.213Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-03T20:04:33.213Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "695976511bf18a645199192a"
+  },
+  "name": "Dumbbells Set",
+  "description": "Adjustable dumbbells set 5-25kg per dumbbell",
+  "price": 149.99,
+  "category": "Fitness",
+  "brand": "FitGear",
+  "tags": [
+    "weights",
+    "dumbbells",
+    "fitness"
+  ],
+  "stock": 190,
+  "rating": 4.9,
+  "reviewsCount": 40,
+  "isActive": true,
+  "image": "",
+  "createdAt": {
+    "$date": "2026-01-03T20:04:33.321Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-03T20:04:33.321Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "695976511bf18a645199192d"
+  },
+  "name": "Resistance Bands",
+  "description": "Set of 5 resistance bands with different resistance levels",
+  "price": 24.99,
+  "category": "Fitness",
+  "brand": "FlexFit",
+  "tags": [
+    "bands",
+    "resistance",
+    "fitness"
+  ],
+  "stock": 15,
+  "rating": 3.9,
+  "reviewsCount": 33,
+  "isActive": true,
+  "image": "",
+  "createdAt": {
+    "$date": "2026-01-03T20:04:33.429Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-03T20:04:33.429Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "695976511bf18a6451991930"
+  },
+  "name": "Foam Roller",
+  "description": "High-density foam roller for muscle recovery",
+  "price": 29.99,
+  "category": "Fitness",
+  "brand": "FlexFit",
+  "tags": [
+    "foam",
+    "roller",
+    "recovery"
+  ],
+  "stock": 165,
+  "rating": 3.7,
+  "reviewsCount": 14,
+  "isActive": true,
+  "image": "",
+  "createdAt": {
+    "$date": "2026-01-03T20:04:33.538Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-03T20:04:33.538Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "695976511bf18a6451991933"
+  },
+  "name": "Water Bottle",
+  "description": "Insulated stainless steel water bottle 1L",
+  "price": 19.99,
+  "category": "Fitness",
+  "brand": "Hydrate",
+  "tags": [
+    "bottle",
+    "water",
+    "fitness"
+  ],
+  "stock": 149,
+  "rating": 3.7,
+  "reviewsCount": 32,
+  "isActive": true,
+  "image": "",
+  "createdAt": {
+    "$date": "2026-01-03T20:04:33.646Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-03T20:04:33.646Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "695976511bf18a6451991936"
+  },
+  "name": "Cotton T-Shirt",
+  "description": "100% cotton comfortable t-shirt in various colors",
+  "price": 14.99,
+  "category": "Clothing",
+  "brand": "ComfortWear",
+  "tags": [
+    "tshirt",
+    "clothing",
+    "cotton"
+  ],
+  "stock": 130,
+  "rating": 4.5,
+  "reviewsCount": 7,
+  "isActive": true,
+  "image": "",
+  "createdAt": {
+    "$date": "2026-01-03T20:04:33.755Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-03T20:04:33.755Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "695976511bf18a6451991939"
+  },
+  "name": "Hoodie",
+  "description": "Warm fleece hoodie with front pocket",
+  "price": 39.99,
+  "category": "Clothing",
+  "brand": "ComfortWear",
+  "tags": [
+    "hoodie",
+    "clothing",
+    "warm"
+  ],
+  "stock": 143,
+  "rating": 3.2,
+  "reviewsCount": 46,
+  "isActive": true,
+  "image": "",
+  "createdAt": {
+    "$date": "2026-01-03T20:04:33.868Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-03T20:04:33.868Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "695976511bf18a645199193c"
+  },
+  "name": "Jeans",
+  "description": "Classic fit jeans with stretch fabric",
+  "price": 49.99,
+  "category": "Clothing",
+  "brand": "DenimStyle",
+  "tags": [
+    "jeans",
+    "clothing",
+    "pants"
+  ],
+  "stock": 150,
+  "rating": 4.9,
+  "reviewsCount": 30,
+  "isActive": true,
+  "image": "",
+  "createdAt": {
+    "$date": "2026-01-03T20:04:33.982Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-03T20:04:33.982Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "695976521bf18a645199193f"
+  },
+  "name": "Sneakers",
+  "description": "Casual sneakers with comfortable sole",
+  "price": 69.99,
+  "category": "Footwear",
+  "brand": "Stride",
+  "tags": [
+    "shoes",
+    "sneakers",
+    "casual"
+  ],
+  "stock": 33,
+  "rating": 3.3,
+  "reviewsCount": 14,
+  "isActive": true,
+  "image": "",
+  "createdAt": {
+    "$date": "2026-01-03T20:04:34.094Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-03T20:04:34.094Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "695976521bf18a6451991942"
+  },
+  "name": "Programming Book",
+  "description": "Complete guide to JavaScript programming",
+  "price": 29.99,
+  "category": "Books",
+  "brand": "TechBooks",
+  "tags": [
+    "book",
+    "programming",
+    "javascript"
+  ],
+  "stock": 131,
+  "rating": 4.9,
+  "reviewsCount": 45,
+  "isActive": true,
+  "image": "",
+  "createdAt": {
+    "$date": "2026-01-03T20:04:34.206Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-03T20:04:34.206Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "695976521bf18a6451991945"
+  },
+  "name": "Cookbook",
+  "description": "100 easy recipes for beginners",
+  "price": 19.99,
+  "category": "Books",
+  "brand": "CookBooks",
+  "tags": [
+    "book",
+    "cooking",
+    "recipes"
+  ],
+  "stock": 170,
+  "rating": 4.9,
+  "reviewsCount": 54,
+  "isActive": true,
+  "image": "",
+  "createdAt": {
+    "$date": "2026-01-03T20:04:34.317Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-03T20:04:34.317Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "695976521bf18a6451991948"
+  },
+  "name": "Notebook",
+  "description": "Hardcover notebook with lined pages",
+  "price": 9.99,
+  "category": "Stationery",
+  "brand": "WriteWell",
+  "tags": [
+    "notebook",
+    "writing",
+    "stationery"
+  ],
+  "stock": 23,
+  "rating": 4.1,
+  "reviewsCount": 24,
+  "isActive": true,
+  "image": "",
+  "createdAt": {
+    "$date": "2026-01-03T20:04:34.433Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-03T20:04:34.433Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "695976521bf18a645199194b"
+  },
+  "name": "USB-C Cable",
+  "description": "Fast charging USB-C cable 2m length",
+  "price": 12.99,
+  "category": "Accessories",
+  "brand": "CableTech",
+  "tags": [
+    "cable",
+    "usb",
+    "charging"
+  ],
+  "stock": 23,
+  "rating": 4.5,
+  "reviewsCount": 20,
+  "isActive": true,
+  "image": "",
+  "createdAt": {
+    "$date": "2026-01-03T20:04:34.542Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-03T20:04:34.542Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "695976521bf18a645199194e"
+  },
+  "name": "HDMI Cable",
+  "description": "High-speed HDMI cable 4K support 2m",
+  "price": 15.99,
+  "category": "Accessories",
+  "brand": "CableTech",
+  "tags": [
+    "cable",
+    "hdmi",
+    "video"
+  ],
+  "stock": 160,
+  "rating": 3.8,
+  "reviewsCount": 33,
+  "isActive": true,
+  "image": "",
+  "createdAt": {
+    "$date": "2026-01-03T20:04:34.651Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-03T20:04:34.651Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "695976521bf18a6451991951"
+  },
+  "name": "USB Hub",
+  "description": "4-port USB 3.0 hub with power adapter",
+  "price": 24.99,
+  "category": "Accessories",
+  "brand": "HubTech",
+  "tags": [
+    "hub",
+    "usb",
+    "accessories"
+  ],
+  "stock": 102,
+  "rating": 4.3,
+  "reviewsCount": 51,
+  "isActive": true,
+  "image": "",
+  "createdAt": {
+    "$date": "2026-01-03T20:04:34.761Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-03T20:04:34.761Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "695976521bf18a6451991954"
+  },
+  "name": "External Hard Drive",
+  "description": "1TB portable external hard drive USB 3.0",
+  "price": 59.99,
+  "category": "Electronics",
+  "brand": "StorageTech",
+  "tags": [
+    "storage",
+    "harddrive",
+    "external"
+  ],
+  "stock": 155,
+  "rating": 3.1,
+  "reviewsCount": 40,
+  "isActive": true,
+  "image": "",
+  "createdAt": {
+    "$date": "2026-01-03T20:04:34.867Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-03T20:04:34.867Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "695976521bf18a6451991957"
+  },
+  "name": "USB Flash Drive",
+  "description": "128GB USB 3.0 flash drive",
+  "price": 19.99,
+  "category": "Electronics",
+  "brand": "StorageTech",
+  "tags": [
+    "usb",
+    "flash",
+    "storage"
+  ],
+  "stock": 21,
+  "rating": 3.3,
+  "reviewsCount": 39,
+  "isActive": true,
+  "image": "",
+  "createdAt": {
+    "$date": "2026-01-03T20:04:34.973Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-03T20:04:34.973Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "695976531bf18a645199195a"
+  },
+  "name": "Bed Sheets Set",
+  "description": "Cotton bed sheets set with pillowcases",
+  "price": 39.99,
+  "category": "Home",
+  "brand": "ComfortHome",
+  "tags": [
+    "sheets",
+    "bedding",
+    "home"
+  ],
+  "stock": 118,
+  "rating": 3.7,
+  "reviewsCount": 31,
+  "isActive": true,
+  "image": "",
+  "createdAt": {
+    "$date": "2026-01-03T20:04:35.081Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-03T20:04:35.081Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "695976531bf18a645199195d"
+  },
+  "name": "Towel Set",
+  "description": "Soft bath towel set 4 pieces",
+  "price": 29.99,
+  "category": "Home",
+  "brand": "ComfortHome",
+  "tags": [
+    "towels",
+    "bath",
+    "home"
+  ],
+  "stock": 53,
+  "rating": 4.7,
+  "reviewsCount": 30,
+  "isActive": true,
+  "image": "",
+  "createdAt": {
+    "$date": "2026-01-03T20:04:35.186Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-03T20:04:35.186Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "695976531bf18a6451991960"
+  },
+  "name": "Storage Baskets",
+  "description": "Set of 3 decorative storage baskets",
+  "price": 24.99,
+  "category": "Home",
+  "brand": "OrganizeHome",
+  "tags": [
+    "storage",
+    "baskets",
+    "organization"
+  ],
+  "stock": 150,
+  "rating": 4.1,
+  "reviewsCount": 26,
+  "isActive": true,
+  "image": "",
+  "createdAt": {
+    "$date": "2026-01-03T20:04:35.295Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-03T20:04:35.295Z"
+  },
+  "__v": 0
+}]
