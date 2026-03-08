@@ -11,9 +11,9 @@ const Products = () => {
         .then(data => setProducts(data))
     }, [])
   return (
-    <div>
+    <div className='m-6'>
       <h2>Products</h2>
-      <ul>
+      <ul className='grid grid-cols-3'>
         {products.map(product => (
         //   <li key={product.id}>{product.name}</li>
         <ProductCard product={product} key={product._id}></ProductCard>
