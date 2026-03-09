@@ -41,6 +41,8 @@ async function run() {
     const productsCollection = database.collection("products");
     // cart collection
     const cartCollection = database.collection("cart");
+    // chat collection (new for chat system)
+    const chatCollection = database.collection("chat");
 
     // endpoint1: /products
     app.get('/products', async (req, res) => {
@@ -48,6 +50,10 @@ async function run() {
         const result = await cursor.toArray()
         res.send(result)
     })
+
+    // attach chat routes (MVC-style in separate files)
+    const chatRoutes = require('./routes/chatRoutes');
+    app.use('/chat', chatRoutes(chatCollection));
     // endpoint2: /products/:id
     app.get('/products/:id', async (req, res) => {
         const id = req.params.id;

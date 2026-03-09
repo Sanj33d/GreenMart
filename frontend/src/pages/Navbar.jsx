@@ -13,6 +13,7 @@ const Navbar = () => {
         </details>
       </li> */}
       <li><a href='/products'>View All Products</a></li>
+      <li><a href='/chat'>Chat</a></li>
  </>
   
   return (
