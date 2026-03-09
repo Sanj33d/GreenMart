@@ -1,13 +1,14 @@
 import React from "react";
+import { Link } from "react-router";
 
 const ProductCard = ({ product }) => {
-  const { name, description, price, category, brand, _id } = product;
+  const { name, description, price, category, brand, _id, image } = product;
   return (
     <div>
       <div className="card bg-base-100 w-96 shadow-sm">
         <figure>
           <img
-            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+            src={image || "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"}
             alt="Shoes"
           />
         </figure>
@@ -24,7 +25,9 @@ const ProductCard = ({ product }) => {
           </div>
 
           {/* btn */}
-          <button className="btn btn-active btn-primary">Buy</button>
+          <Link to={`/products/${_id}`} className="btn btn-active btn-primary">
+            Show Details
+          </Link>
         </div>
       </div>
     </div>
