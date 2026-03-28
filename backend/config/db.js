@@ -18,7 +18,7 @@ async function connectDB() {
   if (!db) {
     await client.connect();
     db = client.db("greenmart");
-    console.log("MongoDB connected");
+    console.log("MongoDB connectedddddd");
   }
   return db;
 }
