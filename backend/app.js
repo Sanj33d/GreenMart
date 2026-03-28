@@ -1,0 +1,21 @@
+const express = require('express');
+const cors = require('cors');
+
+const productRoutes = require('./routes/productRoutes');
+const cartRoutes = require('./routes/cartRoutes');
+const chatRoutes = require('./routes/chatRoutes');
+
+const app = express();
+
+app.use(cors());
+app.use(express.json());
+
+app.get('/', (req, res) => {
+  res.send('GreenMart server is running');
+});
+
+app.use('/products', productRoutes);
+app.use('/cart', cartRoutes);
+app.use('/chat', chatRoutes);
+
+module.exports = app;
