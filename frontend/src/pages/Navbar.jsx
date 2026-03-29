@@ -1,6 +1,23 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { AuthContext } from '../context/AuthContext/AuthContext';
+import { Link, NavLink } from 'react-router';
+import { CartContext } from '../context/CartContext/CartContext';
 
 const Navbar = () => {
+  const { user, signOutUser } = useContext(AuthContext);
+
+  const { cartItems } = useContext(CartContext);
+
+  const handleSignOut = () => {
+    signOutUser()
+      .then(() => {
+        console.log("Signed Out the user");
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+
  const menuItems = <>
     <li><a href='/'>Home</a></li>
       {/* <li>
@@ -13,7 +30,7 @@ const Navbar = () => {
         </details>
       </li> */}
       <li><a href='/products'>View All Products</a></li>
-      <li><a href='/cart'>View Cart</a></li>
+      <li><a href='/cart'>View Cart ({cartItems.length})</a></li>
       <li><a href='/chat'>Chat</a></li>
  </>
   
@@ -38,9 +55,33 @@ const Navbar = () => {
       {menuItems}
     </ul>
   </div>
-  <div className="navbar-end">
+  {/* <div className="navbar-end">
     <a className="btn">Button</a>
-  </div>
+  </div> */}
+  <div className="navbar-end text-sm">
+        {user? <p>User: {user.email}</p> : <p>No user logged in!</p>}
+        <Link to="/profile">
+          <img
+            className="ml-8 rounded-full max-w-1/3"
+            src={user ? user.photoURL : <></>}
+            alt=""
+          />
+        </Link>
+        {user ? (
+          <button onClick={handleSignOut} className="btn">
+            Sign Out
+          </button>
+        ) : (
+          <>
+            <NavLink to="/register" className="btn">
+              Register
+            </NavLink>
+            <NavLink to="/signIn" className="btn">
+              Sign In
+            </NavLink>
+          </>
+        )}
+      </div>
 </div>
     </div>
   )

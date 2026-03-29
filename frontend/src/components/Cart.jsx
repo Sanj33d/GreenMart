@@ -1,41 +1,14 @@
 import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { useContext } from 'react';
+import { CartContext } from '../context/CartContext/CartContext';
 
 const Cart = () => {
-    const [cartItems, setCartItems] = useState([]);
+    // const [cartItems, setCartItems] = useState([]);
+    const { cartItems, setCartItems, loadCartItems, handleRemoveFromCart, handleClearCart } = useContext(CartContext);
 
-    const loadCartItems = () => {
-        fetch("http://localhost:1272/cart")
-        .then(res => res.json())
-        .then(data => setCartItems(data))
-    };
-    useEffect(() => {
-        loadCartItems();
-    }, []);
-
-    const handleRemoveFromCart = (id) => {
-        fetch(`http://localhost:1272/cart/${id}`, {
-            method: "DELETE"
-        })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            loadCartItems();
-        });
-    };
-
-    const handleClearCart = () => {
-        fetch("http://localhost:1272/cart", {
-            method: "DELETE"
-        })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            setCartItems([])
-            // loadCartItems();
-        });
-    };
+    
 
   return (
     <div className="m-6">

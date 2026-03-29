@@ -7,6 +7,8 @@ import Products from "./Products";
 import ProductDetails from "./ProductDetails";
 import Cart from "./Cart";
 import Chat from "./Chat"; // new chat component
+import Register from "../pages/Register";
+import SignIn from "../pages/SignIn";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +20,8 @@ const router = createBrowserRouter([
       {path: "/products/:id", Component: ProductDetails, 
         loader: ({params}) => fetch(`http://localhost:1272/products/${params.id}`)},
       {path: "/cart", Component: Cart},
+      {path: "/register", Component: Register},
+      {path: "/signin", Component: SignIn},
       {path: "/chat", Component: Chat}
     ], 
   },

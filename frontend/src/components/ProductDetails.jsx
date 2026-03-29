@@ -1,36 +1,45 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link, useLoaderData, useNavigate } from 'react-router'
+import { CartContext } from '../context/CartContext/CartContext';
 
 const ProductDetails = () => {
     const product = useLoaderData();
     console.log(product);
     const navigate = useNavigate();
 
-    const { name, description, price, category, brand, _id, image } = product;
-    // handleAddToCart
-    const handleAddToCart = () => {
-        const cartItem = {
-            productId: _id,
-            name,  
-            price,
-            brand,
-            image,
-            quantity: 1
-        }
-        // send cartItem to backend
-        fetch("http://localhost:1272/cart", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(cartItem)
-        })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            navigate("/cart");
-        });
+    const { name, description, price, category, brand, image } = product;
+
+    const { handleAddToCart } = useContext(CartContext);
+    const onAddToCart = () => {
+    handleAddToCart(product).then(() => {
+      navigate("/cart");
+    });
     };
+    // // handleAddToCart
+    // const handleAddToCart = () => {
+    //     const cartItem = {
+    //         productId: _id,
+    //         name,  
+    //         price,
+    //         brand,
+    //         image,
+    //         quantity: 1
+    //     }
+    //     // send cartItem to backend
+    //     fetch("http://localhost:1272/cart", {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "application/json"
+    //         },
+    //         body: JSON.stringify(cartItem)
+    //     })
+    //     .then(res => res.json())
+    //     .then(data => {
+    //         console.log(data);
+    //         loadCartItems();
+    //         navigate("/cart");
+    //     });
+    // };
 
   return (
     <div className='flex justify-center'>
@@ -54,7 +63,7 @@ const ProductDetails = () => {
           </div>
 
           {/* btn */}
-          <button onClick={handleAddToCart} className="btn btn-active btn-primary">
+          <button onClick={onAddToCart} className="btn btn-active btn-primary">
             Add to Cart
           </button>
         </div>
