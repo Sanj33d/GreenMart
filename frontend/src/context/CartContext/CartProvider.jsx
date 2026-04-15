@@ -5,12 +5,12 @@ const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
 
 //   const loadCartItems = () => {
-//     fetch("https://greenmart-backend-e4mw46oef-sanj33ds-projects.vercel.app/cart")
+//     fetch("https://greenmart-backend-f8ld2n6sn-sanj33ds-projects.vercel.app/cart")
 //       .then(res => res.json())
 //       .then(data => setCartItems(data));
 //   };
   const loadCartItems = () => {
-        fetch("https://greenmart-backend-e4mw46oef-sanj33ds-projects.vercel.app/cart")
+        fetch("https://greenmart-backend-f8ld2n6sn-sanj33ds-projects.vercel.app/cart")
         .then(res => res.json())
         .then(data => setCartItems(data))
     };
@@ -29,7 +29,7 @@ const CartProvider = ({ children }) => {
       quantity: 1,
     };
         // send cartItem to backend
-        return fetch("https://greenmart-backend-e4mw46oef-sanj33ds-projects.vercel.app/cart", {
+        return fetch("https://greenmart-backend-f8ld2n6sn-sanj33ds-projects.vercel.app/cart", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -45,7 +45,7 @@ const CartProvider = ({ children }) => {
     };
 
     const handleRemoveFromCart = (id) => {
-       return fetch(`https://greenmart-backend-e4mw46oef-sanj33ds-projects.vercel.app/cart/${id}`, {
+       return fetch(`https://greenmart-backend-f8ld2n6sn-sanj33ds-projects.vercel.app/cart/${id}`, {
             method: "DELETE"
         })
         .then(res => res.json())
@@ -56,7 +56,7 @@ const CartProvider = ({ children }) => {
     };
 
     const handleClearCart = () => {
-        return fetch("https://greenmart-backend-e4mw46oef-sanj33ds-projects.vercel.app/cart", {
+        return fetch("https://greenmart-backend-f8ld2n6sn-sanj33ds-projects.vercel.app/cart", {
             method: "DELETE"
         })
         .then(res => res.json())

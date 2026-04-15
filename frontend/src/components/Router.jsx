@@ -18,7 +18,7 @@ const router = createBrowserRouter([
       { index: true, Component: Home},
       {path: "/products", Component: Products},
       {path: "/products/:id", Component: ProductDetails, 
-        loader: ({params}) => fetch(`https://greenmart-backend-e4mw46oef-sanj33ds-projects.vercel.app/products/${params.id}`)},
+        loader: ({params}) => fetch(`https://greenmart-backend-f8ld2n6sn-sanj33ds-projects.vercel.app/products/${params.id}`)},
       {path: "/cart", Component: Cart},
       {path: "/register", Component: Register},
       {path: "/signin", Component: SignIn},

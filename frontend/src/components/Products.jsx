@@ -6,7 +6,7 @@ const Products = () => {
     const [products, setProducts] = useState([])
 
     useEffect(() => {
-        fetch("https://greenmart-backend-e4mw46oef-sanj33ds-projects.vercel.app/products")
+        fetch("https://greenmart-backend-f8ld2n6sn-sanj33ds-projects.vercel.app/products")
         .then(res => res.json())
         .then(data => setProducts(data))
     }, [])
