@@ -26,7 +26,7 @@ const ProductDetails = () => {
     //         quantity: 1
     //     }
     //     // send cartItem to backend
-    //     fetch("http://localhost:1272/cart", {
+    //     fetch("https://greenmart-backend-e4mw46oef-sanj33ds-projects.vercel.app/cart", {
     //         method: "POST",
     //         headers: {
     //             "Content-Type": "application/json"

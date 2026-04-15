@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.send('GreenMart server is running');
+  res.send('GreenMart server is runningggg');
 });
 
 app.use('/products', productRoutes);
