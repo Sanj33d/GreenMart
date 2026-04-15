@@ -6,10 +6,11 @@ const Products = () => {
     const [products, setProducts] = useState([])
 
     useEffect(() => {
-        fetch("https://greenmart-backend-f8ld2n6sn-sanj33ds-projects.vercel.app/products")
+        fetch("http://localhost:1272/products")
         .then(res => res.json())
         .then(data => setProducts(data))
     }, [])
+    console.log(products);
   return (
     <div className='m-6'>
       <h2>Products</h2>

@@ -7,15 +7,15 @@ const chatRoutes = require('./routes/chatRoutes');
 
 const app = express();
 
-app.use(cors({
-  origin: 'https://greenmart-44b85.web.app',
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
+// app.use(cors({
+//   origin: 'https://greenmart-44b85.web.app',
+//   credentials: true,
+//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+//   allowedHeaders: ['Content-Type', 'Authorization']
+// }));
 
 
-// app.use(cors());
+app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
