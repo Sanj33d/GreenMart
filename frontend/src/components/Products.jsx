@@ -10,6 +10,7 @@ const Products = () => {
         .then(res => res.json())
         .then(data => setProducts(data))
     }, [])
+    console.log(products);
   return (
     <div className='m-6'>
       <h2>Products</h2>
