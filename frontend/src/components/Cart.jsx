@@ -47,9 +47,9 @@ const Cart = () => {
         Clear Cart
       </button>
 
-      {/* <NavLink to="/checkout" className="btn btn-success m-4 ">
+      <NavLink to="/checkout" className="btn btn-success m-4 ">
         Proceed to Checkout
-      </NavLink> */}
+      </NavLink>
     </div>
   )
 }

@@ -1,8 +1,9 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useState, useEffect, useContext } from "react";
-import { useCart } from "../../context/CartContext/CartContext";
-import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../context/AuthContext/AuthContext";
+// import { useCart } from "../../context/CartContext/CartContext";
+import { CartContext } from "../context/CartContext/CartContext";
+import { AuthContext } from "../context/AuthContext/AuthContext";
+import { useNavigate } from "react-router";
 
 const PaymentForm = () => {
   // using stripe
@@ -10,7 +11,7 @@ const PaymentForm = () => {
   // useElements(): to use stripe's getElement()
   const elements = useElements();
  
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   // shipping info
   const [shipping, setShipping] = useState({
   fullName: "",
@@ -41,7 +42,10 @@ const PaymentForm = () => {
   const [error, setError] = useState();
   const [success, setSuccess] = useState();
   //
-  const { totalPrice, cart, clearCart } = useCart();
+//   const { totalPrice, cart, clearCart } = useCart();
+const { cartItems, handleClearCart } = useContext(CartContext);
+const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+const cart = cartItems; // for easier reference in payment intent creation
   const [clientSecret, setClientSecret] = useState("");
   // taka to paysa
   const amountInCents = Math.round(Number(totalPrice) * 100);
@@ -53,7 +57,7 @@ const PaymentForm = () => {
     // 
     if (!isShippingValid) return;
 
-    fetch("http://localhost:5000/create-payment-intent", {
+    fetch("http://localhost:1272/payment/create-payment-intent", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ amount: amountInCents, 
@@ -153,7 +157,7 @@ if (!clientSecret) {
   shipping, // the shipping form state you added
 };
 
-await fetch("http://localhost:5000/orders", {
+await fetch("http://localhost:1272/orders", {
   method: "POST",
   headers: { "content-type": "application/json" },
   body: JSON.stringify(orderData),

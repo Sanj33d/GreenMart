@@ -21,7 +21,7 @@ const router = createBrowserRouter([
       {path: "/products/:id", Component: ProductDetails, 
         loader: ({params}) => fetch(`http://localhost:1272/products/${params.id}`)},
       {path: "/cart", Component: Cart},
-      // {path: "/checkout", Component: Checkout}, // placeholder for checkout page  
+      {path: "/checkout", Component: Checkout}, // placeholder for checkout page  
       {path: "/register", Component: Register},
       {path: "/signin", Component: SignIn},
       {path: "/chat", Component: Chat}
