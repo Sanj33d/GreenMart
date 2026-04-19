@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDvLw6ivi52ZG6VbjLcCheNo7Q4R8BrtSA",
-  authDomain: "greenmart-44b85.firebaseapp.com",
-  projectId: "greenmart-44b85",
-  storageBucket: "greenmart-44b85.firebasestorage.app",
-  messagingSenderId: "245703737391",
-  appId: "1:245703737391:web:732552050e91acb06a86da"
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId
 };
 
 // Initialize Firebase
