@@ -34,9 +34,22 @@ async function updateCartItemQuantity(id, quantity) {
   );
 }
 
+// userspecific cart clearing
+async function getCartByEmail(email) {
+  const collection = await getCollection();
+  return collection.find({ userEmail: email }).toArray();
+}
+
+async function clearCartByEmail(email) {
+  const collection = await getCollection();
+  return collection.deleteMany({ userEmail: email });
+}
+
 module.exports = {
   addCartItem,
   getAllCartItems,
+  getCartByEmail,
+  clearCartByEmail,
   deleteCartItem,
   clearCart,
   updateCartItemQuantity,

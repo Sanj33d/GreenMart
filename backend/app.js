@@ -8,6 +8,7 @@ const cartRoutes = require('./routes/cartRoutes');
 const chatRoutes = require('./routes/chatRoutes');
 const paymentRoutes = require('./routes/paymentRoutes');
 const userRoutes = require('./routes/userRoutes');
+const orderRoutes = require('./routes/orderRoutes');
 
 const app = express();
 
@@ -31,6 +32,7 @@ app.use('/cart', cartRoutes);
 app.use('/chat', chatRoutes);
 app.use('/payment', paymentRoutes);
 app.use('/users', userRoutes);
+app.use('/orders', orderRoutes);
 
 
 module.exports = app;

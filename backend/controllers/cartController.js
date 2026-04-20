@@ -16,13 +16,26 @@ async function createCartItem(req, res) {
   }
 }
 
+// async function getCartItems(req, res) {
+//   try {
+//     const result = await cartModel.getAllCartItems();
+//     res.send(result);
+//   } catch (error) {
+//     console.error('GET /cart error:', error);
+//     res.status(500).send({ error: 'Failed to fetch cart items' });
+//   }
+// }
+
 async function getCartItems(req, res) {
   try {
-    const result = await cartModel.getAllCartItems();
+    const email = req.query.email;
+    const result = await cartModel.getCartByEmail(email);
     res.send(result);
   } catch (error) {
+    // res.status(500).send({ error: 'Failed to fetch cart items' });
     console.error('GET /cart error:', error);
     res.status(500).send({ error: 'Failed to fetch cart items' });
+
   }
 }
 
@@ -35,10 +48,22 @@ async function removeCartItem(req, res) {
     res.status(500).send({ error: 'Failed to delete cart item' });
   }
 }
+// v1
+// async function removeAllCartItems(req, res) {
+//   try {
+//     const result = await cartModel.clearCart();
+//     res.send(result);
+//   } catch (error) {
+//     console.error('DELETE /cart error:', error);
+//     res.status(500).send({ error: 'Failed to clear cart' });
+//   }
+// }
 
+// v2
 async function removeAllCartItems(req, res) {
   try {
-    const result = await cartModel.clearCart();
+    const { email } = req.query;
+    const result = await cartModel.clearCartByEmail(email);
     res.send(result);
   } catch (error) {
     console.error('DELETE /cart error:', error);
