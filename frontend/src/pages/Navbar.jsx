@@ -4,7 +4,9 @@ import { Link, NavLink } from 'react-router';
 import { CartContext } from '../context/CartContext/CartContext';
 
 const Navbar = () => {
-  const { user, signOutUser } = useContext(AuthContext);
+  const { user, signOutUser, dbUser } = useContext(AuthContext);
+  console.log("Firebase user:", user);
+  console.log("Mongo user:", dbUser);
 
   const { cartItems } = useContext(CartContext);
 

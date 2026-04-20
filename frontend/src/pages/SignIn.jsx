@@ -9,22 +9,56 @@ const SignIn = () => {
   const { signIn, signInWithGoogle } = useContext(AuthContext);
 
   const location = useLocation();
-  console.log("location of sign in page",location)
-  
+  console.log("location of sign in page", location);
+
   // location.state means where I was supposed to reach
-  const from = location.state || "/products"
+  const from = location.state || "/products";
   const navigate = useNavigate();
 
+  // signinwithgoogle V1
+  // const handleSignInWithGoogle = () => {
+  //   signInWithGoogle()
+  //     .then((res) => {
+  //       console.log(res.user);
+  //       navigate(from);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err.message);
+  //     });
+  // };
+
+  // signinwithgoogle V2
   const handleSignInWithGoogle = () => {
     signInWithGoogle()
-    .then((res) => {
-        console.log(res.user);
-        navigate(from)
-    })
-    .catch((err) => {
-        console.log(err.message)
-    })
-  }
+      .then(async (res) => {
+        const loggedUser = res.user;
+
+        const userData = {
+          firebaseUid: loggedUser.uid,
+          email: loggedUser.email,
+          fullName: loggedUser.displayName || "",
+          avatarUrl: loggedUser.photoURL || "",
+          role: "client",
+          authProvider: "google",
+          status: "offline",
+          lastSeen: new Date().toISOString(),
+          isActive: true,
+        };
+
+        await fetch("http://localhost:1272/users", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(userData),
+        });
+
+        navigate(from);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
 
   const handleSignIn = (e) => {
     e.preventDefault();
@@ -77,7 +111,10 @@ const SignIn = () => {
                   <a className="link link-hover">Forgot password?</a>
                 </div>
                 <button className="btn btn-neutral mt-4">Sign In</button>
-                <button onClick={handleSignInWithGoogle} className="btn mt-2 bg-white text-black border-[#e5e5e5]">
+                <button
+                  onClick={handleSignInWithGoogle}
+                  className="btn mt-2 bg-white text-black border-[#e5e5e5]"
+                >
                   <svg
                     aria-label="Google logo"
                     width="16"

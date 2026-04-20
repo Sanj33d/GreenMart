@@ -3,22 +3,62 @@
 // import lottieRegister from "../../assets/lotties/Register.json";
 import { use, useContext } from "react";
 import { AuthContext } from "../context/AuthContext/AuthContext";
-import { NavLink } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
+    const name = form.name.value;
     const email = form.email.value;
+    const role = form.role.value;
     const password = form.password.value;
 
-    console.log(email, password);
+    console.log(name, email, role, password);
     // create a user
+    // createUser(email, password)
+    //   .then((res) => {
+    //     console.log(res.user);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error.code);
+    //     console.log(error.message);
+    //   });
+
+    // create userV2
     createUser(email, password)
-      .then((res) => {
-        console.log(res.user);
+      .then(async (res) => {
+        const userData = {
+          firebaseUid: res.user.uid,
+          email: res.user.email,
+          // fullName: res.user.displayName || "",
+          fullName: name || "",
+          avatarUrl: res.user.photoURL || "",
+          role,
+          authProvider: "password",
+          status: "offline",
+          lastSeen: new Date().toISOString(),
+          isActive: true,
+        };
+
+        const response = await fetch("http://localhost:1272/users", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(userData),
+        });
+
+        const data = await response.json();
+        console.log("saved user in db", data);
+
+        if (response.ok) {
+          form.reset();
+          navigate("/signIn");
+        }
       })
       .catch((error) => {
         console.log(error.code);
@@ -40,25 +80,47 @@ const Register = () => {
             </div>
             <form onSubmit={handleRegister}>
               <fieldset className="fieldset">
+                <label className="label">Name</label>
+                <input
+                  name="name"
+                  type="text"
+                  className="input"
+                  placeholder="Your name"
+                  required
+                />
                 <label className="label">Email</label>
                 <input
                   name="email"
                   type="email"
                   className="input"
                   placeholder="Email"
+                  required
                 />
+                {/* role */}
+                <label className="label">Role</label>
+                <select name="role" className="select select-bordered" required>
+                  <option value="client">Client</option>
+                  <option value="designer">Designer</option>
+                  <option value="manager">Manager</option>
+                  <option value="sponsor">Sponsor</option>
+                  <option value="developer">Developer</option>
+                </select>
                 <label className="label">Password</label>
                 <input
                   name="password"
                   type="password"
                   className="input"
                   placeholder="Password"
+                  required
                 />
                 <div>
                   <a className="link link-hover">Forgot password?</a>
                 </div>
                 <button className="btn btn-neutral mt-4">Register</button>
-                <NavLink to="/signIn" className="btn mt-2 bg-white text-black border-[#e5e5e5]">
+                <NavLink
+                  to="/signIn"
+                  className="btn mt-2 bg-white text-black border-[#e5e5e5]"
+                >
                   <svg
                     aria-label="Google logo"
                     width="16"
