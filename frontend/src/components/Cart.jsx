@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
 import { CartContext } from '../context/CartContext/CartContext';
+import { NavLink } from 'react-router';
 
 const Cart = () => {
     // const [cartItems, setCartItems] = useState([]);
@@ -45,6 +46,10 @@ const Cart = () => {
       <button className='btn btn-primary' onClick={handleClearCart}>
         Clear Cart
       </button>
+
+      <NavLink to="/checkout" className="btn btn-success m-4 ">
+        Proceed to Checkout
+      </NavLink>
     </div>
   )
 }
