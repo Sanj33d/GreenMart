@@ -8,6 +8,7 @@ import { NavLink } from 'react-router';
 const Cart = () => {
     // const [cartItems, setCartItems] = useState([]);
     const { cartItems, setCartItems, loadCartItems, handleRemoveFromCart, handleClearCart } = useContext(CartContext);
+    const safeCartItems = Array.isArray(cartItems) ? cartItems : [];
 
     
 
@@ -16,7 +17,7 @@ const Cart = () => {
       <h2 className="text-3xl font-bold mb-4">My Cart</h2>
 
       <div className="grid grid-cols-1 gap-4">
-        {cartItems.map(item => (
+        {safeCartItems.map(item => (
           <div key={item._id} className="card bg-base-100 shadow-md p-4">
             <div className="flex items-center gap-4">
               <img
