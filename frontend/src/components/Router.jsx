@@ -10,6 +10,7 @@ import Chat from "./Chat"; // new chat component
 import Register from "../pages/Register";
 import SignIn from "../pages/SignIn";
 import Checkout from "./Checkout";
+import MyOrders from "./MyOrders";
 
 const router = createBrowserRouter([
   {
@@ -21,9 +22,10 @@ const router = createBrowserRouter([
       {path: "/products/:id", Component: ProductDetails, 
         loader: ({params}) => fetch(`http://localhost:1272/products/${params.id}`)},
       {path: "/cart", Component: Cart},
-      {path: "/checkout", Component: Checkout}, // placeholder for checkout page  
+      {path: "/checkout", Component: Checkout},
       {path: "/register", Component: Register},
       {path: "/signin", Component: SignIn},
+      {path: "/orders", Component: MyOrders},
       {path: "/chat", Component: Chat}
     ], 
   },

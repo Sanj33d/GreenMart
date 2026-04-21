@@ -186,7 +186,7 @@ const PaymentForm = () => {
 
       // clear cart after successful payment
       // clearCart();
-      await handleClearCart();
+      // await handleClearCart();
       setSuccess(
         "✅Payment successful! Redirecting you to the home page in 3 seconds",
       );
