@@ -22,7 +22,6 @@ const Navbar = () => {
 
   const menuItems = (
     <>
-
       {/* <li><a href='/products'>View All Products</a></li>
       <li><a href='/cart'>View Cart ({cartItems.length})</a></li>
       <NavLink to="/orders">My Orders</NavLink>
@@ -33,12 +32,23 @@ const Navbar = () => {
       <li>
         <NavLink to="/products">View All Products</NavLink>
       </li>
-      <li>
+      {
+        dbUser && (
+          <li>
         <NavLink to="/cart">View Cart ({cartItems.length})</NavLink>
       </li>
-      <li>
+        )
+      }
+      {dbUser && (
+        <li>
         <NavLink to="/orders">My Orders</NavLink>
       </li>
+      )}
+      {dbUser?.role === "manager" && (
+        <li>
+          <NavLink to="/manage-orders">Manage Orders</NavLink>
+        </li>
+      )}
       <li>
         <NavLink to="/chat">Chat</NavLink>
       </li>
@@ -75,7 +85,9 @@ const Navbar = () => {
             </ul>
           </div>
           {/* <a className="btn btn-ghost text-xl">GreenMart</a> */}
-          <NavLink to="/" className="btn btn-ghost text-xl">ShopiMart</NavLink>
+          <NavLink to="/" className="btn btn-ghost text-xl">
+            ShopiMart
+          </NavLink>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{menuItems}</ul>

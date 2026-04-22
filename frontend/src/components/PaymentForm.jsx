@@ -170,7 +170,7 @@ const PaymentForm = () => {
           price: i.price,
           quantity: i.quantity,
         })),
-        shipping, // the shipping form state you added
+        // shipping, // the shipping form state you added
       };
 
       await fetch("http://localhost:1272/orders", {
@@ -181,6 +181,7 @@ const PaymentForm = () => {
           items: cartItems,
           totalAmount: totalPrice,
           paymentIntentId: paymentIntent.id,
+          shippingInfo: shipping,
         }),
       });
 
