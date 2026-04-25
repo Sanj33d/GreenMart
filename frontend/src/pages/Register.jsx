@@ -57,7 +57,7 @@ const Register = () => {
 
         if (response.ok) {
           form.reset();
-          navigate("/signIn");
+          navigate("/");
         }
       })
       .catch((error) => {

@@ -41,7 +41,7 @@ const PaymentForm = () => {
   const [success, setSuccess] = useState();
   //
   //   const { totalPrice, cart, clearCart } = useCart();
-  const { cartItems, handleClearCart } = useContext(CartContext);
+  const { cartItems, handleClearCart, setCartItems } = useContext(CartContext);
   const totalPrice = cartItems.reduce(
     (total, item) => total + item.price * item.quantity,
     0,
@@ -187,7 +187,9 @@ const PaymentForm = () => {
 
       // clear cart after successful payment
       // clearCart();
-      // await handleClearCart();
+      
+      setCartItems([]);
+      
       setSuccess(
         "✅Payment successful! Redirecting you to the home page in 3 seconds",
       );
