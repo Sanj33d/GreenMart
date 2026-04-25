@@ -69,7 +69,37 @@ const getUserByEmail = async (req, res) => {
   }
 };
 
+const updateUser = async (req, res) => {
+  try {
+    const db = await connectDB();
+    const usersCollection = db.collection('users');
+
+    const email = req.params.email;
+    const { fullName, avatarUrl } = req.body;
+
+    const result = await usersCollection.updateOne(
+      { email },
+      {
+        $set: {
+          fullName: fullName || '',
+          avatarUrl: avatarUrl || '',
+          updatedAt: new Date(),
+        },
+      }
+    );
+
+    res.send({
+      message: 'User updated successfully',
+      result,
+    });
+  } catch (error) {
+    console.error('PUT /users/:email error:', error);
+    res.status(500).send({ error: 'Failed to update user' });
+  }
+};
+
 module.exports = {
   saveUser,
   getUserByEmail,
+  updateUser,
 };
