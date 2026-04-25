@@ -6,7 +6,7 @@ import { AuthContext } from "../context/AuthContext/AuthContext";
 import { NavLink, useNavigate } from "react-router";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, setDbUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleRegister = (e) => {
@@ -51,13 +51,14 @@ const Register = () => {
           },
           body: JSON.stringify(userData),
         });
-
+        
         const data = await response.json();
         console.log("saved user in db", data);
 
         if (response.ok) {
           form.reset();
-          navigate("/signIn");
+          setDbUser(userData);
+          navigate("/");
         }
       })
       .catch((error) => {

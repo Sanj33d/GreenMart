@@ -3,7 +3,7 @@ const cartModel = require('../models/cartModel');
 
 async function placeOrder(req, res) {
   try {
-    const { userEmail, items, totalAmount, paymentIntentId } = req.body;
+    const { userEmail, items, totalAmount, paymentIntentId, shippingInfo } = req.body;
 
     if (!userEmail || !items || items.length === 0) {
       return res.status(400).send({ error: 'Invalid order data' });
@@ -14,6 +14,7 @@ async function placeOrder(req, res) {
       items,
       totalAmount,
       paymentIntentId,
+        shippingInfo,
       paymentStatus: 'paid',
       orderStatus: 'pending',
       createdAt: new Date(),
@@ -21,7 +22,7 @@ async function placeOrder(req, res) {
 
     const result = await orderModel.createOrder(orderData);
 
-    // 🔥 clear only this user's cart (we will fix cart next)
+    //clear only this user's cart
     await cartModel.clearCartByEmail(userEmail);
 
     res.send({
