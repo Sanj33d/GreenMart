@@ -12,7 +12,8 @@ const SignIn = () => {
   console.log("location of sign in page", location);
 
   // location.state means where I was supposed to reach
-  const from = location.state || "/products";
+  // const from = location.state || "/products";
+  const from = location.state?.from?.pathname || "/products";
   const navigate = useNavigate();
 
   // signinwithgoogle V1
@@ -53,7 +54,8 @@ const SignIn = () => {
           body: JSON.stringify(userData),
         });
 
-        navigate(from);
+        // navigate(from);
+        navigate(from, { replace: true });
       })
       .catch((err) => {
         console.log(err.message);
@@ -71,7 +73,8 @@ const SignIn = () => {
     signIn(email, password)
       .then((res) => {
         console.log(res.user);
-        navigate(from);
+        // navigate(from);
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error.code);

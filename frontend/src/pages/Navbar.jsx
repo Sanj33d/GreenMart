@@ -44,7 +44,7 @@ const Navbar = () => {
         <NavLink to="/orders">My Orders</NavLink>
       </li>
       )}
-      {dbUser?.role === "manager" && (
+      {(dbUser?.role === "manager" || dbUser?.role === "developer") && (
         <li>
           <NavLink to="/manage-orders">Manage Orders</NavLink>
         </li>
