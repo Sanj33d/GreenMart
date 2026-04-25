@@ -33,13 +33,13 @@ const Navbar = () => {
         <NavLink to="/products">View All Products</NavLink>
       </li>
       {
-        dbUser && (
+        user && (
           <li>
         <NavLink to="/cart">View Cart ({cartItems.length})</NavLink>
       </li>
         )
       }
-      {dbUser && (
+      {user && (
         <li>
         <NavLink to="/orders">My Orders</NavLink>
       </li>
@@ -52,6 +52,16 @@ const Navbar = () => {
       <li>
         <NavLink to="/chat">Chat</NavLink>
       </li>
+
+      {user && (
+  <NavLink to="/profile">
+    <img
+      className="ml-4 rounded-full w-10 h-10 object-cover border border-gray-300"
+      src={user?.photoURL || "https://i.ibb.co/4pDNDk1/avatar.png"}
+      alt="profile"
+    />
+  </NavLink>
+)}
     </>
   );
 
@@ -97,13 +107,14 @@ const Navbar = () => {
   </div> */}
         <div className="navbar-end text-sm">
           {user ? <p>User: {user.email}</p> : <p>No user logged in!</p>}
-          <Link to="/profile">
+          {/* <Link to="/profile">
             <img
               className="ml-8 rounded-full max-w-1/3"
-              src={user ? user.photoURL : <></>}
+              // src={user ? user.photoURL : <></>}
+              src={user?.photoURL || "https://i.ibb.co/4pDNDk1/avatar.png"}
               alt=""
             />
-          </Link>
+          </Link> */}
           {user ? (
             <button onClick={handleSignOut} className="btn">
               Sign Out

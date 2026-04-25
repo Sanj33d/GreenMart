@@ -84,8 +84,8 @@ const AuthProvider = ({ children }) => {
 
   const signOutUser = () => {
     setLoading(true);
-    return signOut(auth);
     setDbUser(null);
+    return signOut(auth);
   };
 
   const authInfo = {
@@ -94,6 +94,7 @@ const AuthProvider = ({ children }) => {
     signIn,
     user,
     dbUser,
+    setDbUser,
     signOutUser,
     signInWithGoogle,
   };

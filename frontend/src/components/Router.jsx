@@ -14,6 +14,7 @@ import MyOrders from "./MyOrders";
 import ManageOrders from "./ManageOrders";
 import PrivateRoute from "./PrivateRoute";
 import AdminRoute from "./AdminRoute"
+import Profile from "./Profile";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,7 @@ const router = createBrowserRouter([
       { path: "/signin", Component: SignIn },
       { path: "/orders", element: <PrivateRoute><MyOrders /></PrivateRoute> },
       { path: "/manage-orders", element: <AdminRoute><ManageOrders /></AdminRoute>  },
+      { path: "/profile", element: <PrivateRoute><Profile /></PrivateRoute> },
       { path: "/chat", Component: Chat },
     ],
   },
