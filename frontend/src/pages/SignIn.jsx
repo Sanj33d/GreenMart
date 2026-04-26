@@ -1,12 +1,14 @@
 // import Lottie from "lottie-react";
 // import LottieSignIn from "../../assets/lotties/SignIn.json";
-import { use, useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthContext/AuthContext";
 // import { useLocation, useNavigate } from "react-router-dom";
 import { useLocation, useNavigate } from "react-router";
 
 const SignIn = () => {
-  const { signIn, signInWithGoogle } = useContext(AuthContext);
+  const { signIn, signInWithGoogle, setDbUser } = useContext(AuthContext);
+
+  const [selectedRole, setSelectedRole] = useState("client");
 
   const location = useLocation();
   console.log("location of sign in page", location);
@@ -28,59 +30,102 @@ const SignIn = () => {
   //     });
   // };
 
-  // signinwithgoogle V2
-  const handleSignInWithGoogle = () => {
-    signInWithGoogle()
-      .then(async (res) => {
-        const loggedUser = res.user;
+// handleSignWithGoogle V4
+const handleSignInWithGoogle = async () => {
+  try {
+    const res = await signInWithGoogle();
+    const loggedUser = res.user;
 
-        const userData = {
+    console.log("Selected role:", selectedRole);
+
+    const userData = {
+      firebaseUid: loggedUser.uid,
+      email: loggedUser.email,
+      fullName: loggedUser.displayName || "",
+      avatarUrl: loggedUser.photoURL || "",
+      role: selectedRole, // 🔥 THIS MUST BE CORRECT
+      authProvider: "google",
+      status: "online",
+      lastSeen: new Date().toISOString(),
+      isActive: true,
+    };
+
+    console.log("Sending userData:", userData);
+
+    const saveRes = await fetch("http://localhost:1272/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userData),
+    });
+
+    const saveData = await saveRes.json();
+    console.log("Save response:", saveData);
+
+    const dbUserRes = await fetch(
+      `http://localhost:1272/users/${loggedUser.email}`
+    );
+    const dbUserData = await dbUserRes.json();
+
+    setDbUser(dbUserData);
+    navigate(from, { replace: true });
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+// handleSignIN V1
+  // const handleSignIn = (e) => {
+  //   e.preventDefault();
+  //   const form = e.target;
+  //   const email = form.email.value;
+  //   const password = form.password.value;
+
+  //   console.log(email, password);
+  //   // sign in user
+  //   signIn(email, password)
+  //     .then((res) => {
+  //       console.log(res.user);
+  //       // navigate(from);
+  //       navigate(from, { replace: true });
+  //     })
+  //     .catch((error) => {
+  //       console.log(error.code);
+  //       console.log(error.message);
+  //     });
+  // };
+
+  // handleSIginIn v2
+  const handleSignIn = (e) => {
+  e.preventDefault();
+  const form = e.target;
+  const email = form.email.value;
+  const password = form.password.value;
+
+  signIn(email, password)
+    .then(async (res) => {
+      const loggedUser = res.user;
+
+      // Save/update role in DB on every sign-in
+      await fetch("http://localhost:1272/users", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
           firebaseUid: loggedUser.uid,
           email: loggedUser.email,
-          fullName: loggedUser.displayName || "",
-          avatarUrl: loggedUser.photoURL || "",
-          role: "client",
-          authProvider: "google",
-          status: "offline",
+          role: selectedRole,           // ← send selected role
+          authProvider: "password",
+          status: "online",
           lastSeen: new Date().toISOString(),
           isActive: true,
-        };
-
-        await fetch("http://localhost:1272/users", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(userData),
-        });
-
-        // navigate(from);
-        navigate(from, { replace: true });
-      })
-      .catch((err) => {
-        console.log(err.message);
+        }),
       });
-  };
 
-  const handleSignIn = (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const email = form.email.value;
-    const password = form.password.value;
-
-    console.log(email, password);
-    // sign in user
-    signIn(email, password)
-      .then((res) => {
-        console.log(res.user);
-        // navigate(from);
-        navigate(from, { replace: true });
-      })
-      .catch((error) => {
-        console.log(error.code);
-        console.log(error.message);
-      });
-  };
+      navigate(from, { replace: true });
+    })
+    .catch((error) => console.log(error.message));
+};
 
   return (
     <div className="hero bg-base-200 min-h-screen">
@@ -114,7 +159,19 @@ const SignIn = () => {
                   <a className="link link-hover">Forgot password?</a>
                 </div>
                 <button className="btn btn-neutral mt-4">Sign In</button>
+                {/*  */}
+                <select
+                  value={selectedRole}
+                  onChange={(e) => setSelectedRole(e.target.value)}
+                  className="select select-bordered w-full mt-3"
+                >
+                  <option value="client">Client</option>
+                  <option value="manager">Manager</option>
+                  <option value="developer">Developer</option>
+                </select>
+
                 <button
+                type="button"
                   onClick={handleSignInWithGoogle}
                   className="btn mt-2 bg-white text-black border-[#e5e5e5]"
                 >
