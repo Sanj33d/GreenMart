@@ -1,13 +1,15 @@
 // import Lottie from "lottie-react";
 
 // import lottieRegister from "../../assets/lotties/Register.json";
-import { use, useContext } from "react";
+import { use, useContext, useState } from "react";
 import { AuthContext } from "../context/AuthContext/AuthContext";
 import { NavLink, useNavigate } from "react-router";
 
 const Register = () => {
   const { createUser, setDbUser } = useContext(AuthContext);
   const navigate = useNavigate();
+
+  const [error, setError] = useState("");
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -64,6 +66,7 @@ const Register = () => {
       .catch((error) => {
         console.log(error.code);
         console.log(error.message);
+        setError(error.message);
       });
   };
 
@@ -117,6 +120,7 @@ const Register = () => {
                 <div>
                   <a className="link link-hover">Forgot password?</a>
                 </div>
+                {error && <p className="text-red-500">{error}</p>}
                 <button className="btn btn-neutral mt-4">Register</button>
                 <NavLink
                   to="/signIn"

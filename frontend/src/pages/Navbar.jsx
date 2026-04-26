@@ -32,17 +32,15 @@ const Navbar = () => {
       <li>
         <NavLink to="/products">View All Products</NavLink>
       </li>
-      {
-        user && (
-          <li>
-        <NavLink to="/cart">View Cart ({cartItems.length})</NavLink>
-      </li>
-        )
-      }
       {user && (
         <li>
-        <NavLink to="/orders">My Orders</NavLink>
-      </li>
+          <NavLink to="/cart">View Cart ({cartItems?.length || 0})</NavLink>
+        </li>
+      )}
+      {user && (
+        <li>
+          <NavLink to="/orders">My Orders</NavLink>
+        </li>
       )}
       {(dbUser?.role === "manager" || dbUser?.role === "developer") && (
         <li>
@@ -54,14 +52,19 @@ const Navbar = () => {
       </li>
 
       {user && (
-  <NavLink to="/profile">
-    <img
-      className="ml-4 rounded-full w-10 h-10 object-cover border border-gray-300"
-      src={user?.photoURL || "https://i.ibb.co/4pDNDk1/avatar.png"}
-      alt="profile"
-    />
-  </NavLink>
-)}
+        <NavLink to="/profile">
+          <img
+            className="ml-4 rounded-full w-10 h-10 object-cover border border-gray-300"
+            // src={user?.photoURL || "https://i.ibb.co/4pDNDk1/avatar.png"}
+            src={
+              dbUser?.avatarUrl ||
+              user?.photoURL ||
+              "https://i.ibb.co/4pDNDk1/avatar.png"
+            }
+            alt="profile"
+          />
+        </NavLink>
+      )}
     </>
   );
 
@@ -88,7 +91,7 @@ const Navbar = () => {
               </svg>
             </div>
             <ul
-              tabIndex="-1"
+              tabIndex={-1}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
               {menuItems}
@@ -106,7 +109,8 @@ const Navbar = () => {
     <a className="btn">Button</a>
   </div> */}
         <div className="navbar-end text-sm">
-          {user ? <p>User: {user.email}</p> : <p>No user logged in!</p>}
+          {/* {user ? <p>User: {user.email}</p> : <p>No user logged in!</p>} */}
+          {user ? <p>User: {dbUser?.fullName || user.email}</p> : <p>No user logged in!</p>}
           {/* <Link to="/profile">
             <img
               className="ml-8 rounded-full max-w-1/3"

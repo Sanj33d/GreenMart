@@ -54,6 +54,30 @@ const Profile = () => {
     }
   };
 
+  const handleImageUpload = async (e) => {
+    const image = e.target.files[0];
+    if (!image) return;
+
+    const data = new FormData();
+    data.append("file", image);
+    data.append("upload_preset", "YOUR_UPLOAD_PRESET");
+
+    const res = await fetch(
+      "https://api.cloudinary.com/v1_1/YOUR_CLOUD_NAME/image/upload",
+      {
+        method: "POST",
+        body: data,
+      },
+    );
+
+    const result = await res.json();
+
+    setFormData((prev) => ({
+      ...prev,
+      avatarUrl: result.secure_url,
+    }));
+  };
+
   return (
     <div className="min-h-screen bg-base-200 p-8 text-white">
       <div className="max-w-xl mx-auto bg-base-100 shadow-xl rounded-2xl p-8">
@@ -87,6 +111,13 @@ const Profile = () => {
             />
           </div>
 
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handleImageUpload}
+            className="file-input file-input-bordered w-full"
+          />
+          
           <div>
             <label className="block mb-1 font-semibold">Avatar URL</label>
             <input
@@ -100,14 +131,18 @@ const Profile = () => {
           </div>
 
           <div className="space-y-2">
-            <p><strong>Email:</strong> {user?.email}</p>
-            <p><strong>Role:</strong> {dbUser?.role || "client"}</p>
-            <p><strong>Status:</strong> {dbUser?.status || "online"}</p>
+            <p>
+              <strong>Email:</strong> {user?.email}
+            </p>
+            <p>
+              <strong>Role:</strong> {dbUser?.role || "client"}
+            </p>
+            <p>
+              <strong>Status:</strong> {dbUser?.status || "online"}
+            </p>
           </div>
 
-          <button className="btn btn-primary w-full">
-            Update Profile
-          </button>
+          <button className="btn btn-primary w-full">Update Profile</button>
         </form>
 
         {message && <p className="mt-4 text-green-400">{message}</p>}
@@ -116,4 +151,4 @@ const Profile = () => {
   );
 };
 
-export default Profile; 
+export default Profile;
