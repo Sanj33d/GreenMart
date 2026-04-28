@@ -243,91 +243,225 @@ const PaymentForm = () => {
   //
 
   return (
-    <div>
-      <form
-        onSubmit={handleSubmit}
-        className="bg-white p-6 rounded-xl max-w-md mx-auto"
-      >
-        {/* shipping inputs */}
-        <h2 className="text-xl font-bold mb-3 text-gray-900">
-          Shipping Information
-        </h2>
+    // <div>
+    //   <form
+    //     onSubmit={handleSubmit}
+    //     className="bg-white p-6 rounded-xl max-w-md mx-auto"
+    //   >
+    //     {/* shipping inputs */}
+    //     <h2 className="text-xl font-bold mb-3 text-gray-900">
+    //       Shipping Information
+    //     </h2>
 
-        <div className="grid gap-3 mb-4">
+    //     <div className="grid gap-3 mb-4">
+    //       <input
+    //         className="input input-bordered"
+    //         name="fullName"
+    //         placeholder="Full Name"
+    //         value={shipping.fullName}
+    //         onChange={handleShippingChange}
+    //         required
+    //       />
+    //       <input
+    //         className="input input-bordered"
+    //         name="phone"
+    //         placeholder="Phone"
+    //         value={shipping.phone}
+    //         onChange={handleShippingChange}
+    //         required
+    //       />
+    //       <input
+    //         className="input input-bordered"
+    //         name="address"
+    //         placeholder="Full Address"
+    //         value={shipping.address}
+    //         onChange={handleShippingChange}
+    //         required
+    //       />
+
+    //       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+    //         <input
+    //           className="input input-bordered"
+    //           name="city"
+    //           placeholder="City"
+    //           value={shipping.city}
+    //           onChange={handleShippingChange}
+    //           required
+    //         />
+    //         <input
+    //           className="input input-bordered"
+    //           name="postalCode"
+    //           placeholder="Postal Code"
+    //           value={shipping.postalCode}
+    //           onChange={handleShippingChange}
+    //           required
+    //         />
+    //       </div>
+
+    //       <textarea
+    //         className="textarea textarea-bordered"
+    //         name="notes"
+    //         placeholder="Notes (optional)"
+    //         value={shipping.notes}
+    //         onChange={handleShippingChange}
+    //       />
+    //     </div>
+
+    //     <h2 className="text-xl font-bold mb-3 text-gray-900">
+    //       Card Information
+    //     </h2>
+
+    //     {/* stripe card input */}
+    //     <CardElement className="p-2 border-5 rounded-xl "></CardElement>
+
+    //     {/* form btn */}
+    //     <button
+    //       type="submit"
+    //       disabled={!stripe || !clientSecret || !isShippingValid}
+    //       className="btn btn-primary w-full"
+    //     >
+    //       Pay ৳ {formattedTotal}
+    //     </button>
+
+    //     {/* error display */}
+    //     {error && <p className="text-red-500">{error}</p>}
+    //     {success && <p className="text-green-600 mt-3">{success}</p>}
+    //   </form>
+    // </div>
+
+    // v2
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 flex items-center justify-center px-4 py-12">
+  <form
+    onSubmit={handleSubmit}
+    className="w-full max-w-xl rounded-3xl border border-slate-700/70 bg-slate-900/90 p-8 text-white shadow-2xl backdrop-blur-md"
+  >
+    {/* Header */}
+    <div className="mb-8 text-center">
+      <p className="mb-2 text-xs uppercase tracking-[4px] text-indigo-300">
+        Secure Checkout
+      </p>
+      <h1 className="text-3xl font-extrabold">Complete Your Order</h1>
+      <p className="mt-2 text-sm text-slate-400">
+        Enter your shipping details and payment information below.
+      </p>
+    </div>
+
+    {/* Shipping Section */}
+    <div className="rounded-2xl border border-slate-700 bg-slate-950/50 p-5">
+      <div className="mb-5 flex items-center gap-3">
+        <div className="flex h-9 w-9 items-center justify-center rounded-full bg-indigo-600 text-sm font-bold">
+          1
+        </div>
+        <h2 className="text-xl font-bold">Shipping Information</h2>
+      </div>
+
+      <div className="grid gap-4">
+        <input
+          className="input input-bordered w-full bg-slate-800/80 border-slate-700 text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          name="fullName"
+          placeholder="Full Name"
+          value={shipping.fullName}
+          onChange={handleShippingChange}
+          required
+        />
+
+        <input
+          className="input input-bordered w-full bg-slate-800/80 border-slate-700 text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          name="phone"
+          placeholder="Phone"
+          value={shipping.phone}
+          onChange={handleShippingChange}
+          required
+        />
+
+        <input
+          className="input input-bordered w-full bg-slate-800/80 border-slate-700 text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          name="address"
+          placeholder="Full Address"
+          value={shipping.address}
+          onChange={handleShippingChange}
+          required
+        />
+
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <input
-            className="input input-bordered"
-            name="fullName"
-            placeholder="Full Name"
-            value={shipping.fullName}
+            className="input input-bordered w-full bg-slate-800/80 border-slate-700 text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            name="city"
+            placeholder="City"
+            value={shipping.city}
             onChange={handleShippingChange}
             required
           />
           <input
-            className="input input-bordered"
-            name="phone"
-            placeholder="Phone"
-            value={shipping.phone}
+            className="input input-bordered w-full bg-slate-800/80 border-slate-700 text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            name="postalCode"
+            placeholder="Postal Code"
+            value={shipping.postalCode}
             onChange={handleShippingChange}
             required
-          />
-          <input
-            className="input input-bordered"
-            name="address"
-            placeholder="Full Address"
-            value={shipping.address}
-            onChange={handleShippingChange}
-            required
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <input
-              className="input input-bordered"
-              name="city"
-              placeholder="City"
-              value={shipping.city}
-              onChange={handleShippingChange}
-              required
-            />
-            <input
-              className="input input-bordered"
-              name="postalCode"
-              placeholder="Postal Code"
-              value={shipping.postalCode}
-              onChange={handleShippingChange}
-              required
-            />
-          </div>
-
-          <textarea
-            className="textarea textarea-bordered"
-            name="notes"
-            placeholder="Notes (optional)"
-            value={shipping.notes}
-            onChange={handleShippingChange}
           />
         </div>
 
-        <h2 className="text-xl font-bold mb-3 text-gray-900">
-          Card Information
-        </h2>
-
-        {/* stripe card input */}
-        <CardElement className="p-2 border-5 rounded-xl "></CardElement>
-
-        {/* form btn */}
-        <button
-          type="submit"
-          disabled={!stripe || !clientSecret || !isShippingValid}
-          className="btn btn-primary w-full"
-        >
-          Pay ৳ {formattedTotal}
-        </button>
-
-        {/* error display */}
-        {error && <p className="text-red-500">{error}</p>}
-        {success && <p className="text-green-600 mt-3">{success}</p>}
-      </form>
+        <textarea
+          className="textarea textarea-bordered min-h-24 w-full bg-slate-800/80 border-slate-700 text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          name="notes"
+          placeholder="Notes (optional)"
+          value={shipping.notes}
+          onChange={handleShippingChange}
+        />
+      </div>
     </div>
+
+    {/* Card Section */}
+    <div className="mt-6 rounded-2xl border border-slate-700 bg-slate-950/50 p-5">
+      <div className="mb-5 flex items-center gap-3">
+        <div className="flex h-9 w-9 items-center justify-center rounded-full bg-indigo-600 text-sm font-bold">
+          2
+        </div>
+        <h2 className="text-xl font-bold">Card Information</h2>
+      </div>
+
+      <div className="rounded-xl border border-slate-700 bg-white p-4 shadow-inner focus-within:ring-2 focus-within:ring-indigo-500">
+        <CardElement />
+      </div>
+
+      <p className="mt-3 text-xs text-slate-400">
+        Payments are processed securely through Stripe.
+      </p>
+    </div>
+
+    {/* Total + Button */}
+    <div className="mt-6 rounded-2xl border border-indigo-500/30 bg-indigo-500/10 p-5">
+      <div className="mb-4 flex items-center justify-between">
+        <span className="text-slate-300">Total Payable</span>
+        <span className="text-2xl font-extrabold text-indigo-300">
+          ৳ {formattedTotal}
+        </span>
+      </div>
+
+      <button
+        type="submit"
+        disabled={!stripe || !clientSecret || !isShippingValid}
+        className="w-full rounded-xl bg-indigo-600 py-3 text-lg font-bold text-white shadow-lg shadow-indigo-900/40 transition hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-50"
+      >
+        Pay ৳ {formattedTotal}
+      </button>
+    </div>
+
+    {/* Messages */}
+    {error && (
+      <p className="mt-5 rounded-xl border border-red-500/40 bg-red-500/10 p-3 text-center text-sm text-red-300">
+        {error}
+      </p>
+    )}
+
+    {success && (
+      <p className="mt-5 rounded-xl border border-green-500/40 bg-green-500/10 p-3 text-center text-sm text-green-300">
+        {success}
+      </p>
+    )}
+  </form>
+</div>
   );
 };
 
