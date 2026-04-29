@@ -66,7 +66,7 @@ import { NavLink } from "react-router";
 
 const Footer = () => {
   return (
-    <footer className="bg-slate-950 text-gray-300 border-t border-slate-800 mt-10">
+    <footer className="bg-slate-950 text-gray-300 border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-6 py-10">
         {/* Top Section */}
         <div className="grid md:grid-cols-3 gap-8">

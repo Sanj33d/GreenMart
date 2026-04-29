@@ -100,7 +100,7 @@ const Cart = () => {
                   {/* Image */}
                   <div className="w-20 h-20 flex-shrink-0 rounded-xl overflow-hidden bg-white/5 ring-1 ring-inset ring-white/10">
                     <img
-                      src={item.image}
+                      src={item.image || "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"}
                       alt={item.name}
                       className="w-full h-full object-cover"
                     />
