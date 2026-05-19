@@ -19,6 +19,7 @@ const PaymentForm = () => {
     address: "",
     city: "",
     postalCode: "",
+    deadline: "",
     notes: "",
   });
 
@@ -37,6 +38,7 @@ const PaymentForm = () => {
 
   const handleShippingChange = (e) => {
     setShipping((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+
   };
 
   //
@@ -343,6 +345,8 @@ const PaymentForm = () => {
   };
 
   const formattedTotal = Number(totalPrice).toFixed(2);
+  
+  console.log(shipping)
   //
 
   return (
@@ -498,7 +502,19 @@ const PaymentForm = () => {
                 onChange={handleShippingChange}
                 required
               />
+
+              
             </div>
+
+            <input
+              className="w-full px-4 py-3 border border-gray-700 rounded-xl bg-gray-800 text-gray-100 placeholder-gray-500 outline-none transition focus:bg-gray-900 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20"
+              name="deadline"
+              type="date"
+              placeholder="Deadline"
+              value={shipping.deadline}
+              onChange={handleShippingChange}
+              required
+            />
 
             <textarea
               className="w-full px-4 py-3 border border-gray-700 rounded-xl bg-gray-800 text-gray-100 placeholder-gray-500 outline-none transition resize-none min-h-24 focus:bg-gray-900 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20"

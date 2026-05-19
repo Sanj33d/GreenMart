@@ -243,7 +243,7 @@ const Navbar = () => {
           </div>
 
           <NavLink to="/" className="text-2xl font-extrabold tracking-tight">
-            <span className="text-white">Shopi</span>
+            <span className="text-white">Green</span>
             <span className="text-indigo-400">Mart</span>
           </NavLink>
         </div>

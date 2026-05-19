@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+// const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 const productRoutes = require('./routes/productRoutes');
 const cartRoutes = require('./routes/cartRoutes');
@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 app.use('/products', productRoutes);
 app.use('/cart', cartRoutes);
 app.use('/chat', chatRoutes);
-app.use('/payment', paymentRoutes);
+// app.use('/payment', paymentRoutes);
 app.use('/users', userRoutes);
 app.use('/orders', orderRoutes);
 app.use('/payment', paymentRoutes);

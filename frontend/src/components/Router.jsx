@@ -13,7 +13,7 @@ import Checkout from "./Checkout";
 import MyOrders from "./MyOrders";
 import ManageOrders from "./ManageOrders";
 import PrivateRoute from "./PrivateRoute";
-import AdminRoute from "./AdminRoute"
+import AdminRoute from "./AdminRoute";
 import Profile from "./Profile";
 
 const router = createBrowserRouter([
@@ -29,13 +29,49 @@ const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`http://localhost:1272/products/${params.id}`),
       },
-      { path: "/cart", element: <PrivateRoute><Cart /></PrivateRoute> },
-      { path: "/checkout", Component: Checkout },
+      {
+        path: "/cart",
+        element: (
+          <PrivateRoute>
+            <Cart />
+          </PrivateRoute>
+        ),
+      },
+      // { path: "/checkout", Component: Checkout },
+      {
+        path: "/checkout",
+        element: (
+          <PrivateRoute>
+            <Checkout />
+          </PrivateRoute>
+        ),
+      },
       { path: "/register", Component: Register },
       { path: "/signin", Component: SignIn },
-      { path: "/orders", element: <PrivateRoute><MyOrders /></PrivateRoute> },
-      { path: "/manage-orders", element: <AdminRoute><ManageOrders /></AdminRoute>  },
-      { path: "/profile", element: <PrivateRoute><Profile /></PrivateRoute> },
+      {
+        path: "/orders",
+        element: (
+          <PrivateRoute>
+            <MyOrders />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/manage-orders",
+        element: (
+          <AdminRoute>
+            <ManageOrders />
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "/profile",
+        element: (
+          <PrivateRoute>
+            <Profile />
+          </PrivateRoute>
+        ),
+      },
       { path: "/chat", Component: Chat },
     ],
   },
